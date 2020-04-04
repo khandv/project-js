@@ -23,9 +23,47 @@
 
 // console.log(0 || "" || 2 || undefined || true || falsе);
 
-<input id="age" value="30">
-let age = document.getElementById('age');
-function showUser(surname, name) {
-	alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+// class Options {
+//     constructor(height, width, bg, fontSize, textAlign) {
+//         this.height = height;
+//         this.width = width;
+//         this.bg = bg;
+//         this.fontSize = fontSize;
+//         this.textAlign = textAlign;
+//     }
+//     createDiv(text) {
+//         let elemDiv = document.createElement('div');
+//         document.body.appendChild(elemDiv);
+//         elemDiv.textContent = text;
+//         elemDiv.textAlign = this.textAlign;
+//         elemDiv.style.height = this.height;
+//         elemDiv.style.width = this.width;
+//         elemDiv.style.background = this.bg;
+//         elemDiv.style.fontSize = this.fontSize;
+//     }
+// }
+
+class Options {
+	constructor(height, width, bg, fontSize, textAlign) {
+		this.height = height;
+		this.width = width;
+		this.bg = bg;
+		this.fontSize = fontSize;
+		this.textAlign = textAlign;
+	}
+
+	createDiv(text) {
+		let elem = document.createElement('div');
+		document.body.appendChild(elem);
+		let param = `height:${this.height}px; width:${this.width}px; background-color:${this.bg}; font-size:${this.fontSize}px; text-align:${this.textAlign}`;
+        elem.style.cssText = param;
+        elem.textContent = text;
+	}
 }
-showUser();
+
+
+
+const item = new Options(50, 500, 'blue', 30, 'center');
+
+item.createDiv('Hey, gays!');
+console.log(item);
