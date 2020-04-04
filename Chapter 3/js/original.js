@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Timer 
 
-    let deadline = '2020-04-21';
+    let deadline = '2018-11-21';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -64,10 +64,10 @@ window.addEventListener('DOMContentLoaded', function() {
             let t = getTimeRemaining(endtime);
 
             function addZero(num){
-                if(num <= 9) {
-                    return '0' + num;
-                } else return num;
-            }
+                        if(num <= 9) {
+                            return '0' + num;
+                        } else return num;
+                    };
 
             hours.textContent = addZero(t.hours);
             minutes.textContent = addZero(t.minutes);
@@ -80,42 +80,37 @@ window.addEventListener('DOMContentLoaded', function() {
                 seconds.textContent = '00';
             }
         }
+
     }
+
     setClock('timer', deadline);
-    
+
     // Modal
 
     let more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
-        close = document.querySelector('.popup-close'),
-        descrBtn = document.querySelector('.description-btn');
+        close = document.querySelector('.popup-close');
 
-
-    function popUp() {
+    more.addEventListener('click', function() {
         overlay.style.display = 'block';
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden';
-    }
-
-    more.addEventListener('click', popUp);
-    descrBtn.addEventListener('click', popUp);
-
-    // more.addEventListener('click', function() {
-    //     overlay.style.display = 'block';
-    //     this.classList.add('more-splash');
-    //     document.body.style.overflow = 'hidden';
-    // });
-
-    // descrBtn.addEventListener('click', function() {
-    //     overlay.style.display = 'block';
-    //     this.classList.add('more-splash');
-    //     document.body.style.overflow = 'hidden';
-    // });
+    });
 
     close.addEventListener('click', function() {
         overlay.style.display = 'none';
         more.classList.remove('more-splash');
-        descrBtn.classList.remove('more-splash');
         document.body.style.overflow = '';
     });
+
 });
+
+// Второе задание
+
+// let age = document.getElementById('age');
+ 
+// function showUser(surname, name) {
+//          alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+// }
+ 
+// showUser.apply(age, ["Горький","Максим"]);
