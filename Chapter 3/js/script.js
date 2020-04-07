@@ -100,43 +100,12 @@ window.addEventListener('DOMContentLoaded', function() {
     more.addEventListener('click', popUp);
     descrBtn.addEventListener('click', popUp);
 
-    // more.addEventListener('click', function() {
-    //     overlay.style.display = 'block';
-    //     this.classList.add('more-splash');
-    //     document.body.style.overflow = 'hidden';
-    // });
-
-    // descrBtn.addEventListener('click', function() {
-    //     overlay.style.display = 'block';
-    //     this.classList.add('more-splash');
-    //     document.body.style.overflow = 'hidden';
-    // });
-
     close.addEventListener('click', function() {
         overlay.style.display = 'none';
         more.classList.remove('more-splash');
         descrBtn.classList.remove('more-splash');
         document.body.style.overflow = '';
     });
-
-    // class options {
-    //     constructor(height, width, bg, fontSize, textAlign) {
-    //         this.height = height;
-    //         this.width = width;
-    //         this.bg = bg;
-    //         this.fontSize = fontSize;
-    //         this.textAlign = textAlign;
-    //     }
-    //     createDiv(height, width, bg, fontSize, textAlign) {
-    //         let elemDiv = document.createElement('div');
-    //         elemDiv.textContent = textAlign;
-    //         elemDiv.style.height = height;
-    //         elemDiv.style.width = width;
-    //         elemDiv.style.background = bg;
-    //         elemDiv.style.fontSize = fontSize;
-    //         document.body.appendChild(elemDiv);
-    //     }
-    // }
 
     // Form
     let message = {
@@ -267,7 +236,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 totalValue.innerHTML = 0;
             } else {
                 let a = total;
-                totalValue.innerHTML = a * this.options[this.selectedIndex].value;
+                totalValue.innerHTML = a * place.value;
                 // this.options[this.selectedIndex].value
             }
         });
